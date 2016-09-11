@@ -1,19 +1,17 @@
-{
-  "quotes": [
-    {
-      "id" : 0,
-      "text" : "I can't believe this works!",
-      "author": "David Pierce"
-    },
-    {
-      "id" : 1,
-      "text" : "Just do it",
-      "author": "Nike"
-    },
-    {
-      "id" : 2,
-      "text" : "I gotta believe!",
-      "author": "Parrapa the Rapper"
-    }
-  ]
-}
+[
+  {
+    "id" : 0,
+    "text" : "I can't believe this works!",
+    "author": "David Pierce"
+  },
+  {
+    "id" : 1,
+    "text" : "Just do it",
+    "author": "Nike"
+  },
+  {
+    "id" : 2,
+    "text" : "I gotta believe!",
+    "author": "Parrapa the Rapper"
+  }
+]
