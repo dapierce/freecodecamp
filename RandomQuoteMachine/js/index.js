@@ -9,20 +9,22 @@ $(document).ready(function() {
     while (quoteId === currentQuote) {
       quoteId = Math.floor(Math.random() * (numOfQuotes + 1));
     }
-    console.log(quoteId);
+    currentQuote = quoteId;
     var json = [];
     // do fancy JSON stuff here
     $.getJSON("https://dapierce.github.io/freecodecamp/RandomQuoteMachine/quotes.json", function(json) {
       // find the quote at quoteId
-      json = JSON.parse(json).filter(val) {
+      json = json.filter(function(val) {
         return val.id === quoteId;
-        // edit HTML with quote data
-        json.forEach(function(val) {
-          $(".quote").html(val.text);
-          $(".person").html(val.author);
-        });
+      });
+
+      // edit HTML with quote data
+      json.forEach(function(val) {
+        $(".quote").html(val.text);
+        $(".person").html(val.author);
       });
     });
+  }
 
   // after page load, change the quote
   newQuote();
