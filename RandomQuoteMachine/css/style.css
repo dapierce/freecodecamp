@@ -1,0 +1,25 @@
+.title {
+  padding-bottom: 1em;
+  font-family: 'Bevan', serif;
+}
+
+.quotebox {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  background: #ada;
+  padding: 16px;
+  border-radius: 20px;
+  line-height: 2em;
+}
+
+.attributed {
+  font-weight: bold;
+}
+
+.btn {
+  font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+    "Fira Sans", "Droid Sans", "Helvetica Neue", 
+    sans-serif;
+  margin-top: 20px;
+}

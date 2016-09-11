@@ -7,21 +7,22 @@ $(document).ready(function() {
   function newQuote() {
     var quoteId = currentQuote;
     while (quoteId === currentQuote) {
-      quoteId = Math.floor(Math.random() * numOfQuotes);
+      quoteId = Math.floor(Math.random() * (numOfQuotes + 1));
     }
+    console.log(quoteId);
+    var json = [];
     // do fancy JSON stuff here
-    $.getJSON("https://github.com/dapierce/freecodecamp/blob/master/RandomQuoteMachine/quotes.json", function(json) {
+    $.getJSON("https://dapierce.github.io/freecodecamp/RandomQuoteMachine/quotes.json", function(json) {
       // find the quote at quoteId
-      json = json.filter(function(val) {
-        return (val.id === quoteId);
-      });
-      // edit HTML with quote data
-      json.forEach(function(val) {
-        $(".quote").html(val.text);
-        $(".person").html(val.author);
+      json = JSON.parse(json).filter(val) {
+        return val.id === quoteId;
+        // edit HTML with quote data
+        json.forEach(function(val) {
+          $(".quote").html(val.text);
+          $(".person").html(val.author);
+        });
       });
     });
-  }
 
   // after page load, change the quote
   newQuote();
