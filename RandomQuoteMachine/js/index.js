@@ -20,8 +20,8 @@ $(document).ready(function() {
 
       // edit HTML with quote data
       json.forEach(function(val) {
-        $(".quote").html(val.text);
-        $(".person").html(val.author);
+        $(".quote").html(val.quote);
+        $(".name").html(val.name);
       });
     });
   }
