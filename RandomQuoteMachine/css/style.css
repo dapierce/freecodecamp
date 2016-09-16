@@ -5,15 +5,31 @@
 
 .quotebox {
   font-family: 'Lora', serif;
-  font-size: 16px;
+  font-size: 1.2em;
   background: #ada;
-  padding: 16px;
+  padding: 20px;
   border-radius: 20px;
   line-height: 2em;
 }
 
+.quotation-mark-left, .quotation-mark-right {
+  font-size: 200px;
+  position: absolute;
+  top: 80px;
+  opacity: .2;
+}
+
+.quotation-mark-left {
+  left: 2%;
+}
+
+.quotation-mark-right {
+  right: 2%;
+}
+
 .attributed {
   font-weight: bold;
+  margin-right: 16px;
 }
 
 .btn {
