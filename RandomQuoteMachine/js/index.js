@@ -35,7 +35,7 @@ $(document).ready(function() {
     // truncate if quote is bigger than twitter's limit
     if(tweet.length >= TWEET_CHAR_LIMIT) {
       var truncate = "... -"
-      tweet = tweet.slice(0, (tweetLimit - quoteAuthor.length - truncate.length));
+      tweet = tweet.slice(0, (TWEET_CHAR_LIMIT - quoteAuthor.length - truncate.length));
       tweet = tweet + truncate + quoteAuthor;
     }
     var tweetUrl = "http://twitter.com/home?status=" + tweet;
