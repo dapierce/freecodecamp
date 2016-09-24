@@ -4,3 +4,4 @@ My repository storing various projects files and solutions for https://www.freec
 
 It currently contains my solutions for:
 - [Random Quote Machine](/RandomQuoteMachine)
+- [Weather App](/WeatherApp)
