@@ -19,14 +19,14 @@ $(document).ready(function() {
       if (json.quoteAuthor == "Donald Trump") {
         newQuote();
       }
-      // make it elegant if no one is attributted
+      // make it elegant if no one is attributed
       if (json.quoteAuthor === "") {
-        json.quoteAuthor = "Unattributted";
+        json.quoteAuthor = "Unattributed";
       }
       quoteText = json.quoteText;
       quoteAuthor = json.quoteAuthor;
       $(".quote").html(json.quoteText);
-      $(".name").html("- " + json.quoteAuthor);
+      $(".attributed").html("- " + json.quoteAuthor);
     });
   }
 
@@ -41,9 +41,6 @@ $(document).ready(function() {
     var tweetUrl = "http://twitter.com/home?status=" + tweet;
     window.open(tweetUrl, '_blank');
   }
-
-  // after page load, change the quote
-  newQuote();
 
   // get a new quote when the button is pressed
   $("#getQuote").on("click", function() {
