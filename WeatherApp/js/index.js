@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+  var cityName, tempF, tempC, condition; // capture current conditions once
+  var currentUnits = "C";   // default to Celsius
+
   // takes latitude and longitude parameters
   // returns an api url formated with user's location
   function getWeatherApiUrl(latitude, longitude) {
@@ -10,41 +13,60 @@ $(document).ready(function() {
 
   }
 
-  // updates the weather if enough time has elapsed since prior update
+  // check the weather
   function updateWeather(apiUrl) {
 
     $.getJSON(apiUrl, function(json) {
-      console.log(json);
-      var cityName = json.current_observation.display_location.city;
-      var temp = json.current_observation.temp_f;
-      $(".conditions").html(cityName + ": " + temp + " °F");
-
+      cityName = json.current_observation.display_location.city;
+      tempF = json.current_observation.temp_f;
+      tempC = json.current_observation.temp_c;
+      condition = json.current_observation.weather;
+      var country = json.current_observation.display_location.country;
+      if(country == "US") {
+        currentUnits = "F";
+      }
+      displayWeather();
+      changeButton();
     });
-
+  }
+  
+  function displayWeather() {
+    $(".city").html(cityName);
+    $(".condition").html(condition);
+    $(".temp").html(getTemp(currentUnits));
+    $(".unit").html("° " + currentUnits);
+  }
+  
+  function getTemp(unit) {
+    switch(unit) {
+      case "F":
+        return tempF;
+      default:
+        return tempC;
+    }
+  }
+  
+  function changeButton() {
+    if(currentUnits == "C") {
+      $("#units").html("Use Fahrenheit");
+    } else {
+      $("#units").html("Use Celsius");
+    }
   }
 
-  // get user's current location at the start
-  var getWeather = navigator.geolocation.getCurrentPosition(function(position) {
-    // store coords and weather, use if not enough unix time has elapsed
-    var TIME_ELAPSE_TO_UPDATE = 30000;  // 30 secs must elapse to update
-    var timeUpdated = new Date(0);
-    var timeCurrent = Date.now();
-
-    // only update weather if enough time elapsed
-    timeCheck = new Date(timeUpdated + TIME_ELAPSE_TO_UPDATE);
-    if(timeCurrent > timeCheck) {
-      updateWeather(getWeatherApiUrl(position.coords.latitude, position.coords.longitude));
-      timeUpdated = timeCurrent;
-    }
-    else {
-      console.log("Please wait " +
-      (TIME_ELAPSE_TO_UPDATE - (timeCurrent > timeCheck) / 1000 +
-      "secs to update weather."));
-    }
-
+  // get user's current location at the start, and load weather at that location
+  var getWeatherAtLocation = navigator.geolocation.getCurrentPosition(function(position) {
+    updateWeather(getWeatherApiUrl(position.coords.latitude, position.coords.longitude));
   });
 
-  // get a new quote when the button is pressed
-  $("#update").on("click", function() {
+  // change the unit of measurement when unit button is pressed
+  $("#units").on("click", function() {
+    if(currentUnits == "C") {
+      currentUnits = "F";
+    } else {
+      currentUnits = "C";
+    }
+    displayWeather();
+    changeButton();
   });
 });
