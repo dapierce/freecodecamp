@@ -1,20 +1,13 @@
 $(document).ready(function() {
   // global variables
   var TWEET_CHAR_LIMIT = 140;
-  var NUM_OF_QUOTES = 20000;
-  var currentQuote = -1;
   var quoteText = "Somewhere, something incredible is waiting to be known.";
   var quoteAuthor = "Carl Sagan";
 
   // grabs a new quote from a JSON file, compares to avoid current quote
   function newQuote() {
-    var quoteId = currentQuote;
-    while (quoteId === currentQuote) {
-      quoteId = Math.floor(Math.random() * (NUM_OF_QUOTES + 1));
-    }
-    currentQuote = quoteId;
-    var json = [];
-    $.getJSON("https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&key=" + currentQuote + "&format=json&lang=en", function(json) {
+    $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(json) {
+      console.log(json);
       // remove all Donald quotes--probably actually by his ghostwriter anyway
       if (json.quoteAuthor == "Donald Trump") {
         newQuote();

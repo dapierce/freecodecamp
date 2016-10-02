@@ -31,20 +31,20 @@ $(document).ready(function() {
     var timeCurrent = Date.now();
 
     // only update weather if enough time elapsed
-    if(timeCurrent > (timeUpdated - TIME_ELAPSE_TO_UPDATE)) {
+    timeCheck = new Date(timeUpdated + TIME_ELAPSE_TO_UPDATE);
+    if(timeCurrent > timeCheck) {
       updateWeather(getWeatherApiUrl(position.coords.latitude, position.coords.longitude));
       timeUpdated = timeCurrent;
     }
     else {
       console.log("Please wait " +
-      (TIME_ELAPSE_TO_UPDATE - (timeCurrent - timeUpdated)) / 1000 +
-      "secs to update weather.");
+      (TIME_ELAPSE_TO_UPDATE - (timeCurrent > timeCheck) / 1000 +
+      "secs to update weather."));
     }
 
   });
 
   // get a new quote when the button is pressed
   $("#update").on("click", function() {
-    
   });
 });
