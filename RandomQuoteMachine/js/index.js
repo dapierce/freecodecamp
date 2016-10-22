@@ -7,7 +7,6 @@ $(document).ready(function() {
   // grabs a new quote from a JSON file, compares to avoid current quote
   function newQuote() {
     $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(json) {
-      console.log(json);
       // remove all Donald quotes--probably actually by his ghostwriter anyway
       if (json.quoteAuthor == "Donald Trump") {
         newQuote();
@@ -35,7 +34,7 @@ $(document).ready(function() {
       tweet = tweet.slice(0, (TWEET_CHAR_LIMIT - quoteAuthor.length - truncate.length));
       tweet = tweet + truncate + quoteAuthor;
     }
-    var tweetUrl = "http://twitter.com/home?status=" + tweet;
+    var tweetUrl = "http://twitter.com/home?status=" + encodeURIComponent(tweet);
     window.open(tweetUrl, '_blank');
   }
 

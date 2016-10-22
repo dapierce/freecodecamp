@@ -1,17 +1,17 @@
 [
   {
     "id" : 0,
-    "quote" : "I can't believe this works!",
-    "name": "David Pierce"
+    "quoteText" : "I can't believe this works!",
+    "quoteAuthor": "David Pierce"
   },
   {
     "id" : 1,
-    "quote" : "Just do it",
-    "name": "Nike"
+    "quoteText" : "Just do it",
+    "quoteAuthor": "Nike"
   },
   {
     "id" : 2,
-    "quote" : "I gotta believe!",
-    "name": "Parrapa the Rapper"
+    "quoteText" : "I gotta believe!",
+    "quoteAuthor": "Parrapa the Rapper"
   }
 ]

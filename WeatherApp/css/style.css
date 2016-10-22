@@ -1,53 +1,70 @@
+html {
+  height: 100%;
+}
+
 body {
-  background: #ada;
+  color: white;
+  text-shadow: 0 2px 6px black;
+  background-attachment: fixed;
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.6em;
+  opacity: 1;
+  transition: .4s opacity ease;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
 .title {
-  padding-bottom: 1em;
-  font-family: 'Bevan', serif;
+  font-family: 'Damion', cursive;
+  font-size: 50px;
 }
 
-.quotebox {
-  font-family: 'Lora', serif;
-  font-size: 1.4em;
-  background: #fff;
-  padding: 20px 50px;
-  border-radius: 16px;
-  line-height: 2em;
+.screen-reader-text { 
+   clip: rect(1px, 1px, 1px, 1px); 
+   height: 1px; 
+   width: 1px; 
+   overflow: hidden; 
+   position: absolute !important;
 }
 
-.quotation-mark-left, .quotation-mark-right {
-  font-size: 200px;
-  position: absolute;
-  top: 80px;
-  opacity: .2;
+/* glow animation for most icons */
+.wi {
+  margin: 20px 0 0 0;
+  font-size: 5em;
+  text-shadow: 0 0 60px white;
+  animation: glow 1.2s ease-in-out infinite alternate;
 }
 
-.quotation-mark-left {
-  left: 4%;
+/* special animation for sun! */
+.wi-day-sunny {
+  -webkit-animation: spin 20s linear infinite;
+  animation: spin 20s linear infinite;
 }
 
-.quotation-mark-right {
-  right: 5%;
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
-.quote {
-  padding: 20px 0 0 0;
-  display: block;
-  min-height: 120px
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.attributed {
-  font-size: .8em;
-  font-weight: bold;
-  line-height: 2em;
-  margin-right: 16px;
+@-webkit-keyframes glow {
+  to {
+    text-shadow: 0 0 30px white;
+  }
 }
 
-.btn {
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  margin-top: 20px;
+@keyframes glow {
+  to {
+    text-shadow: 0 0 30px white;
+  }
 }
