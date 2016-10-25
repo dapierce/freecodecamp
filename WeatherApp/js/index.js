@@ -25,7 +25,6 @@ $(document).ready(function() {
       if (country === "US") {
         currentUnits = "F";
       }
-      console.log(json);
       displayWeather();
       displayButton();
       // fade in page now that everything's loaded
