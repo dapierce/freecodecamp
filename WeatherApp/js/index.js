@@ -10,6 +10,7 @@ $(document).ready(function() {
 
     var apiUrl = "https://api.wunderground.com/api/1bc2b90471cb41bd/conditions/q/";
     return apiUrl + latitude + "," + longitude + ".json";
+    //return apiUrl + "NV/Las_Vegas.json";
   }
 
   // check the weather
@@ -25,6 +26,7 @@ $(document).ready(function() {
       if (country === "US") {
         currentUnits = "F";
       }
+      console.log(json);
       displayWeather();
       displayButton();
       // fade in page now that everything's loaded
@@ -73,10 +75,29 @@ $(document).ready(function() {
         return "wi wi-night-clear";
       }
     } else {
-      // figure out if partial or completly covered
+      // if its all clouds or rain/etc, don't show any sun/moon
+      switch (icon) {
+        case "cloudy":
+          return "wi wi-cloudy";
+      }
+      if (!day) {
+        // for partial clouds at night, show the moon!
+        switch (icon) {
+          case "partlysunny":
+          case "mostlysunny":
+            return "wi wi-night-alt-partly-cloudy";
+          case "partlycloudy":
+          case "mostlycloudy":
+            return "wi wi-night-alt-cloudy";
+          case "fog":
+            return "wi wi-night-fog";
+        }
+      } else {
+        // use wi-wu api mappings otherwise
+        return "wi wi-wu-" + icon;
+      }
     }
-    // otherwise, use predetermined wi-wu api mappings...
-    return "wi wi-wu-" + icon;
+
   }
 
   // set the time of day at start and fade in hour appropriate colors (mask the time it takes to poll weather)
@@ -122,6 +143,7 @@ $(document).ready(function() {
         // dusk: do moon icons and night colors
         light = timeOfDay.dusk.colorLight;
         dark = timeOfDay.dusk.colorDark;
+        day = false;
       } else {
         if (hour >= timeOfDay.dawn.hour) {
           // dawn: light green/blue morning colors
