@@ -10,7 +10,6 @@ $(document).ready(function() {
 
     var apiUrl = "https://api.wunderground.com/api/1bc2b90471cb41bd/conditions/q/";
     return apiUrl + latitude + "," + longitude + ".json";
-    //return apiUrl + "NV/Las_Vegas.json";
   }
 
   // check the weather
