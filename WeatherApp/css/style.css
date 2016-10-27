@@ -22,17 +22,17 @@ body.fade-out {
   font-size: 50px;
 }
 
-.screen-reader-text { 
-   clip: rect(1px, 1px, 1px, 1px); 
-   height: 1px; 
-   width: 1px; 
-   overflow: hidden; 
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
    position: absolute !important;
 }
 
 /* glow animation for most icons */
 .wi {
-  margin: 20px 0 0 0;
+  margin: 20px 0 12px 0;
   font-size: 5em;
   text-shadow: 0 0 60px white;
   animation: glow 1.2s ease-in-out infinite alternate;

@@ -74,9 +74,8 @@ $(document).ready(function() {
       }
     } else {
       // if its all clouds or rain/etc, don't show any sun/moon
-      switch (icon) {
-        case "cloudy":
-          return "wi wi-cloudy";
+      if (icon === "cloudy") {
+        return "wi wi-cloudy";
       }
       if (!day) {
         // for partial clouds at night, show the moon!
@@ -89,6 +88,8 @@ $(document).ready(function() {
             return "wi wi-night-alt-cloudy";
           case "fog":
             return "wi wi-night-fog";
+          default:
+            return "wi wi-wu-" + icon;
         }
       } else {
         // use wi-wu api mappings otherwise
