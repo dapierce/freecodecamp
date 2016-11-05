@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>Weather App</title>
-    <link href="https://fonts.googleapis.com/css?family=Damion|Rubik" rel="stylesheet">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css?family=Damion|Rubik" rel="stylesheet">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <body>
-    <script>document.body.className += ' fade-out';</script>
-    <div class='container-fluid'>
-      <div class='row text-center'>
-        <h1 class='title'>
-          Windowless Weather
-        </h1>
-      </div>
-      <div class='row text-center col-xs-6 col-xs-offset-3'>
-        <div class='weatherbox'>
-          <h2><span class='city'></span></h2>
-          <span id='icon' class='' aria-hidden="true"></span>
-          <span class='condition screen-reader-text'></span>
-          <h1><span class='temp'></span><span class='unit'></span></h1>
-          <div>
-            <button id='units' class='btn btn-primary'>
-              Use Celsius
-            </button>
-          </div>
+<body>
+  <div class='container-fluid'>
+    <div class='row text-center'>
+      <h1 class='title'>
+        Windowless Weather
+      </h1>
+    </div>
+    <div class='row text-center col-xs-6 col-xs-offset-3'>
+      <div class='weatherbox fade-out'>
+        <h2><span class='city'></span></h2>
+        <span id='icon' class='' aria-hidden="true"></span>
+        <span class='condition screen-reader-text'></span>
+        <h1><span class='temp'></span><span class='unit'></span></h1>
+        <div>
+          <button id='units' class='btn btn-primary'>
+            Use Celsius
+          </button>
         </div>
       </div>
     </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src="js/index.js"></script>
-  </body>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="js/index.js"></script>
+</body>
 </html>

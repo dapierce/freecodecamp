@@ -29,7 +29,7 @@ $(document).ready(function() {
       displayButton();
       // fade in page now that everything's loaded
       $(function() {
-        $('body').removeClass('fade-out');
+        $('.weatherbox').removeClass('fade-out');
       });
     });
   }
@@ -157,7 +157,7 @@ $(document).ready(function() {
       }
     }
     // animate color fades via css?
-    $("body").css("background", "linear-gradient(" + light + ", " + dark + ")");
+    $('body').css("background", "linear-gradient(" + light + ", " + dark + ")");
   }
 
   // start by getting the time and setting the colors
