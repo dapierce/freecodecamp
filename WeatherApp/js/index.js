@@ -7,14 +7,12 @@ $(document).ready(function() {
   // takes latitude and longitude parameters
   // returns an api url formated with user's location
   function getWeatherApiUrl(latitude, longitude) {
-
     var apiUrl = "https://api.wunderground.com/api/1bc2b90471cb41bd/conditions/q/";
     return apiUrl + latitude + "," + longitude + ".json";
   }
 
-  // check the weather
+  // check the weather from the api url in the attribute
   function updateWeather(apiUrl) {
-
     $.getJSON(apiUrl, function(json) {
       cityName = json.current_observation.display_location.city;
       tempF = json.current_observation.temp_f;
@@ -34,7 +32,7 @@ $(document).ready(function() {
     });
   }
 
-  // show the current weather
+  // update the page with the current weather info
   function displayWeather() {
     $(".city").html(cityName);
     $("#icon").attr("class", getIcon(icon));
@@ -44,15 +42,17 @@ $(document).ready(function() {
     $(".unit").html("° " + currentUnits);
   }
 
+  // returns temperature in the units specified by the attribute
   function getTemp(unit) {
     switch (unit) {
       case "F":
-      return tempF;
+        return tempF;
       default:
-      return tempC;
+        return tempC;
     }
   }
 
+  // changes the text of the unit changing button based on current units used
   function displayButton() {
     if (currentUnits == "C") {
       $("#units").html("Use Fahrenheit");
@@ -92,14 +92,15 @@ $(document).ready(function() {
             return "wi wi-wu-" + icon;
         }
       } else {
-        // use wi-wu api mappings otherwise
+        // use default wi-wu api mappings otherwise
         return "wi wi-wu-" + icon;
       }
     }
 
   }
 
-  // set the time of day at start and fade in hour appropriate colors (mask the time it takes to poll weather)
+  // set the time of day at start and fade in hour appropriate colors
+  // (mask the time it takes to poll weather)
   function getTimeOfDay() {
 
     // time and color variables
@@ -156,7 +157,7 @@ $(document).ready(function() {
         }
       }
     }
-    // animate color fades via css?
+    // animate color fades via css
     $('body').css("background", "linear-gradient(" + light + ", " + dark + ")");
   }
 
@@ -168,7 +169,7 @@ $(document).ready(function() {
     updateWeather(getWeatherApiUrl(position.coords.latitude, position.coords.longitude));
   });
 
-  // change the unit of measurement when unit button is pressed
+  // change the units of measurement when unit button is pressed
   $("#units").on("click", function() {
     if (currentUnits == "C") {
       currentUnits = "F";

@@ -35,9 +35,7 @@ body {
   position: absolute !important;
 }
 
-
 /* glow animation for most icons */
-
 .wi {
   margin: 20px 0 12px 0;
   font-size: 5em;
@@ -45,9 +43,7 @@ body {
   animation: glow 1.2s ease-in-out infinite alternate;
 }
 
-
 /* special animation for sun! */
-
 .wi-day-sunny {
   -webkit-animation: spin 20s linear infinite;
   animation: spin 20s linear infinite;
