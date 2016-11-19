@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   // grabs a new quote from a JSON file, compares to avoid current quote
   function newQuote() {
-    freshQuote = getQuote();
+    var freshQuote = getQuote();
 
     // remove all Donald quotes
     if (freshQuote.author.indexOf("Donald Trump") != -1) {
