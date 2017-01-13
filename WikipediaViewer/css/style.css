@@ -4,7 +4,9 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -29,12 +31,12 @@ h1,h2,h3 {
   background: #fff;
   border-radius: 20px;
   border: 8px solid;
-  margin: 20px 60px 0 0;
+  margin: 200px 0 0 0;
   padding: 0;
   opacity: 0;
-  transition: opacity .4s ease-in-out;
-  -moz-transition: opacity .4s ease-in-out;
-  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .3s ease-in-out, margin .4s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out, margin .4s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out, margin .4s ease-in-out;
 }
 
 .article-item {

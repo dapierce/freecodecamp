@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  
+
   // animate button click
   $("#submit").on('click', function(){
     $(this).toggleClass('active');
     setTimeout(function () {
-       $("#submit").toggleClass('active');
+      $("#submit").toggleClass('active');
     }, 300);
   });
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
   }
 
   // searches wikipedia through a url, returns the results as json
-  function searchWikipedia(apiUrl) {    
+  function searchWikipedia(apiUrl) {
     var json = {};
     $.getJSON(apiUrl, function(json) {
       // extract the wikipedia search data
@@ -27,26 +27,28 @@ $(document).ready(function() {
   }
 
   // do a cool transition animation when random page is clicked
-
+  
   // when search button is pressed:
   // change the page to show wikipedia search results
   $("#search-form").on("submit", function(event) {
-    event.preventDefault();    
+    event.preventDefault();
     var searchInput = $("#search-input").val();
 
     if (searchInput === "") {
       return 0;
     }
-    
+
     // clear current results before new search
     $('.results-box').css('opacity', '0');
+    $('.results-box').css('margin', '200px 0 0 0');
     $('.results-box').empty();
-    
-    // load search results on hidden div  
+
+    // load search results on hidden div
     var results = searchWikipedia(getWikipediaApiUrl(searchInput));
 
     // when results finish loading, div fades in
     $('.results-box').css('opacity', '1');
+    $('.results-box').css('margin', '20px 0 0 0');
   });
 
 });

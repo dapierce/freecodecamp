@@ -1,7 +1,8 @@
 # my-freecodecamp
 
-My repository storing various projects files and solutions for https://www.freecodecamp.com/ exercises.
+My repository storing my own personal project files and solutions for [freeCodeCamp](https://www.freecodecamp.com/) exercises.
 
 It currently contains my solutions for:
 - [Random Quote Machine](/RandomQuoteMachine)
 - [Weather App](/WeatherApp)
+- [Wikipedia Viewer](/WikipediaViewer)
