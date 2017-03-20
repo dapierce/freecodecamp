@@ -1,0 +1,140 @@
+  body {
+  margin: 0;
+  padding: 0;
+  background: #6441a4;
+  font-family: Helvetica, Calibri, Ariel, sans serif;
+}
+
+#container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+}
+
+#header {
+  margin: 0 20px;
+  padding: 20px;
+  font-family: 'Fredoka One', sans serif;
+  color: #6441a4;
+  background: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 60px;
+  text-align: center;
+}
+
+#header ul {
+  list-style: none;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+#header li {
+  text-transform: uppercase;
+  display: inline;
+  padding: 0 auto;
+  margin: 0 20px 0 0;
+}
+
+#header a {
+  white-space: nowrap;
+  color: #fff;
+  background-color: #6441a4;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 4px 4px 6px 2px rgba(68, 68, 68, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+.streamer-entry {
+  margin: 12px 20px;
+  height: 120px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+.streamer-entry h2 {
+  padding: 16px 0 0 0;
+  margin: 0;
+  font-family: 'Fredoka One', sans serif;
+  text-overflow: clip;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.streamer-entry p {
+  padding: 8px 16px 0 0;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.slide {
+  background-color: #fff;
+}
+.slide:hover {
+  background-color: #ccc0e0;
+  margin: 12px 40px 0 0;
+}
+
+.unavailable {
+  background-color: #ccc0e0;
+  padding: 0 16px;
+}
+
+.channel-logo {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-right: 16px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+a .status-on {
+  color: #ff4500;
+}
+a .status-off {
+  color: #999;
+}
+
+footer {
+  margin: 12px 20px 0 20px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+}
+
+@media(max-width:500px) {
+  body {
+    font-size: .9em;
+  }
+  #header {
+    margin: 0;
+    border-radius: 0;
+  }
+  .title {
+    font-size: 46px;
+  }
+  .streamer-entry {
+    height: 80px;
+  }
+  .channel-logo {
+    height: 80px;
+    width: 80px;
+  }
+  .channel-description {
+    display: none;
+  }
+  footer {
+    margin: 0;
+    border-radius: 0;
+  }
+}
