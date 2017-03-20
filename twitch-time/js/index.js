@@ -27,7 +27,7 @@ $(document).ready(function() {
         description = "";
       }
       if(logo == null) {
-        logo = "";
+        logo = "https://dapierce.github.io/my-freecodecamp/twitch-time/img/twitch-icon.png";
       }
       $('#streamer-list').append("<a href='" + results.url + "' target='" + channelName + "'><div id='" + channelName + "' class='streamer-entry slide'>\r\n<img class='channel-logo' src='" + logo + "'>\r\n<h2 class='channel-head'>" + results.display_name + "</h2>\r\n<p class='channel-description'>" + description + "</p>\r\n</div></a>");
     }).fail(function(jqxhr, textStatus, error) {
