@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #6441a4;
-  font-family: Helvetica, Calibri, Ariel, sans serif;
+  font-family: Helvetica, Calibri, Ariel, sans-serif;
 }
 
 button {
@@ -77,10 +77,12 @@ button:active {
 }
 
 .status-on {
+  font-family: Ariel, sans-serif;
   color: #ff4500;
 }
 
 .status-off {
+  font-family: Ariel, sans-serif;
   color: #999;
   opacity: .5;
 }
