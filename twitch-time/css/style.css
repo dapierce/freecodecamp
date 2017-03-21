@@ -1,8 +1,12 @@
-  body {
+body {
   margin: 0;
   padding: 0;
   background: #6441a4;
   font-family: Helvetica, Calibri, Ariel, sans serif;
+}
+
+button {
+  border: none;
 }
 
 #container {
@@ -16,13 +20,13 @@
   margin: 0 20px;
   padding: 20px;
   font-family: 'Fredoka One', sans serif;
-  color: #6441a4;
   background: #fff;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
 .title {
+  color: #6441a4;
   margin: 0;
   font-size: 60px;
   text-align: center;
@@ -32,22 +36,53 @@
   list-style: none;
   padding-bottom: 0;
   text-align: center;
+  margin: 10px 0;
 }
 
 #header li {
-  text-transform: uppercase;
   display: inline;
   padding: 0 auto;
   margin: 0 20px 0 0;
 }
 
-#header a {
+button {
+  font-family: 'Fredoka One', sans serif;
+  font-size: 1em;
+  text-transform: uppercase;
   white-space: nowrap;
   color: #fff;
-  background-color: #6441a4;
+  background: #ccc;
   border-radius: 8px;
   padding: 12px;
-  box-shadow: 4px 4px 6px 2px rgba(68, 68, 68, 0.5);
+}
+
+button:hover {
+  background: #ccc0e0;
+}
+
+button:active {
+  background-color: #6441a4;
+}
+
+.pressed {
+  background-color: #6441a4;
+}
+
+.pressed:hover {
+  background-color: #533183;
+}
+
+.pressed:active {
+  background-color: #322052;
+}
+
+.status-on {
+  color: #ff4500;
+}
+
+.status-off {
+  color: #999;
+  opacity: .5;
 }
 
 a {
@@ -60,7 +95,13 @@ a {
   border-radius: 10px;
   transition: all 0.4s ease;
 }
+
+a .streamer-entry {
+  color: #000;
+}
+
 .streamer-entry h2 {
+  color: #6441a4;
   padding: 16px 0 0 0;
   margin: 0;
   font-family: 'Fredoka One', sans serif;
@@ -68,16 +109,19 @@ a {
   white-space: nowrap;
   overflow: hidden;
 }
+
 .streamer-entry p {
-  padding: 8px 16px 0 0;
+  padding: 6px 0;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
+
 .slide {
   background-color: #fff;
 }
+
 .slide:hover {
   background-color: #ccc0e0;
   margin: 12px 40px 0 0;
@@ -88,6 +132,10 @@ a {
   padding: 0 16px;
 }
 
+.hide {
+  display: none;
+}
+
 .channel-logo {
   float: left;
   width: 120px;
@@ -95,12 +143,6 @@ a {
   margin-right: 16px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-}
-a .status-on {
-  color: #ff4500;
-}
-a .status-off {
-  color: #999;
 }
 
 footer {
