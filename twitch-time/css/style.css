@@ -75,22 +75,18 @@ button:active {
 .pressed:active {
   background-color: #322052;
 }
-
-.status-on {
+.status {
   font-family: Ariel, sans-serif;
-  color: #ff4500;
-  font-size: 1.6em;
-  vertical-align: -4px;
+  font-size: 1.4em;
+  vertical-align: -.1em;
   line-height: 0;
+  margin-right: .1em;
 }
-
-.status-off {
-  font-family: Ariel, sans-serif;
+.on {
+  color: #ff4500;
+}
+.off {
   color: #999;
-  font-size: 1.6em;
-  vertical-align: -4px;
-  line-height: 0;
-  opacity: .5;
 }
 
 a {
