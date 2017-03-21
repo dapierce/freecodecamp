@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var channels = ["freecodecamp", "waypoint", "testing-an-invalid-account", "twitchplayspokemon", "gaminup"];
+  var channels = ["freecodecamp", "waypoint", "polygon", "idlethumbs", "testing-an-invalid-account", "twitchplayspokemon", "gaminup"];
   var online = [];
   var offline = [];
 
@@ -25,26 +25,29 @@ $(document).ready(function() {
         logo = "https://dapierce.github.io/my-freecodecamp/twitch-time/img/twitch-icon.png";
       }
       $('#streamer-list').append("<a href='" + results.url + "' target='" + channelName + "'><div id='" + channelName + "' class='streamer-entry slide'>\r\n<img class='channel-logo' src='" + logo + "'>\r\n<h2 class='channel-head'>" + results.display_name + "</h2>\r\n<p class='channel-description'>" + description + "</p>\r\n</div></a>");
+
+      // api call for stream data, only call after initial channel data is loaded
+      $.getJSON(apiCall(channelName, "streams"), function(streamResults) {
+      }).done(function(streamResults) {
+        // handle null stream
+        var status = "<span class='status-off'>⬤</span> Off air";
+        if (streamResults.stream != undefined) {
+          status = "<span class='status-on'>⬤</span> Live: " + streamResults.stream.game;
+          online.push(channelName);
+        } else {
+          offline.push(channelName);
+        }
+        $('#' + channelName).append("\r\n<p class='channel-status'>" + status + "</p>\r\n</div>");
+      
+      }).fail(function(jqxhr, textStatus, error) {
+        // if not currently streaming, add this channel to offline array
+        offline.push(channelName);
+      });
+    
     }).fail(function(jqxhr, textStatus, error) {
       var err = textStatus + ", failed to load channel " + channelName;
       console.log("Request Failed: " + err);
       $('#streamer-list').append("<div id='" + channelName + "' class='streamer-entry unavailable'>\r\n<h2 class='channel-head'>" + channelName + "</h2>\r\n<p class='channel-description'>This Twitch account does not currently exist.</p>\r</div>");
-    });
-
-    // api call for stream data
-    $.getJSON(apiCall(channelName, "streams"), function(results) {
-    }).done(function(results) {
-      // handle null stream
-      var status = "<span class='status-off'>⬤</span> Off air";
-      if (results.stream != undefined) {
-        status = "<span class='status-on'>⬤</span> Live: " + results.stream.game;
-        online.push(channelName);
-      } else {
-        offline.push(channelName);
-      }
-      $('#' + channelName).append("\r\n<p class='channel-status'>" + status + "</p>\r\n</div>");
-    }).fail(function(jqxhr, textStatus, error) {
-      // if not currently streaming, add this channel to offline array
       offline.push(channelName);
     });
   }
