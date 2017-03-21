@@ -30,9 +30,9 @@ $(document).ready(function() {
       $.getJSON(apiCall(channelName, "streams"), function(streamResults) {
       }).done(function(streamResults) {
         // handle null stream
-        var status = "<span class='status-off'>&#9899;&#xFE0E;</span>Off air";
+        var status = "<span class='status off'>&#9899;&#xFE0E;</span>Off air";
         if (streamResults.stream != undefined) {
-          status = "<span class='status-on'>&#9899;&#xFE0E;</span>Live: " + streamResults.stream.game;
+          status = "<span class='status on'>&#9899;&#xFE0E;</span>Live: " + streamResults.stream.game;
           online.push(channelName);
         } else {
           offline.push(channelName);
