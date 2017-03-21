@@ -78,14 +78,18 @@ button:active {
 
 .status-on {
   font-family: Ariel, sans-serif;
-  font-size: 1.4em;
   color: #ff4500;
+  font-size: 1.6em;
+  vertical-align: -4px;
+  line-height: 0;
 }
 
 .status-off {
   font-family: Ariel, sans-serif;
-  font-size: 1.4em;
   color: #999;
+  font-size: 1.6em;
+  vertical-align: -4px;
+  line-height: 0;
   opacity: .5;
 }
 
