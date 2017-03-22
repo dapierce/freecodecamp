@@ -93,6 +93,9 @@ button:active {
 a {
   text-decoration: none;
 }
+a img{
+    border: 0px;
+}
 
 .streamer-entry {
   margin: 12px 20px;
