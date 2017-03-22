@@ -30,20 +30,20 @@ $(document).ready(function() {
       $.getJSON(apiCall(channelName, "streams"), function(streamResults) {
       }).done(function(streamResults) {
         // handle null stream
-        var status = "<span class='status off'>&#9899;&#xFE0E;</span>Off air";
+        var status = "<span class='status off'></span>Off air";
         if (streamResults.stream != undefined) {
-          status = "<span class='status on'>&#9899;&#xFE0E;</span>Live: " + streamResults.stream.game;
+          status = "<span class='status on'></span>Live: " + streamResults.stream.game;
           online.push(channelName);
         } else {
           offline.push(channelName);
         }
         $('#' + channelName).append("\r\n<p class='channel-status'>" + status + "</p>\r\n</div>");
-      
+
       }).fail(function(jqxhr, textStatus, error) {
         // if not currently streaming, add this channel to offline array
         offline.push(channelName);
       });
-    
+
     }).fail(function(jqxhr, textStatus, error) {
       var err = textStatus + ", failed to load channel " + channelName;
       console.log("Request Failed: " + err);
