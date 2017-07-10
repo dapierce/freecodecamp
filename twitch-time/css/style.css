@@ -93,17 +93,14 @@ button:active {
 a {
   text-decoration: none;
 }
-a img{
-    border: 0px;
-}
 
 .streamer-entry {
   margin: 12px 20px;
   height: 120px;
   border-radius: 10px;
-  transition:
+  transition: 
     background-color .2s ease,
-    margin 0.4s cubic-bezier(0.2, 0.9, 0.5, 1.6);
+    transform 0.4s cubic-bezier(0.2, 0.9, 0.5, 1.6);
 }
 
 a .streamer-entry {
@@ -134,12 +131,16 @@ a .streamer-entry {
 
 .slide:hover {
   background-color: #ccc0e0;
-  margin: 12px 40px 12px 0;
+  transform: translateX(-20px);
 }
 
 .unavailable {
   background-color: #ccc0e0;
   padding: 0 16px;
+}
+
+.unavailable > h2, .unavailable > p {
+  color: #666;
 }
 
 .hide {
