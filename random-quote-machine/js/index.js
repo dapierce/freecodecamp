@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // global variables
-  var TWEET_CHAR_LIMIT = 140;
+  var TWEET_CHAR_LIMIT = 280;
   var quote = {
     "author": "Carl Sagan",
     "text": "Somewhere, something incredible is waiting to be known."
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     // remove all Donald quotes
     if (freshQuote.author.indexOf("Donald Trump") != -1) {
-      console.log("***This is not normal***");
+      console.log("***Not worthy of quoting***");
       return -1;
     }
 
