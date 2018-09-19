@@ -14,22 +14,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
+  border-radius: 8px;
   display: none;
 }
 
 ::-webkit-scrollbar-track:active {
   display: inherit;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   transition: .2s all;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background:  rgba(255, 255, 255, 0.8);
+  background:  rgba(255, 255, 255, 0.6);
 }
 
 #container {
