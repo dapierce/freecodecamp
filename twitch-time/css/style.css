@@ -1,5 +1,6 @@
 html {
   overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 body {
@@ -42,10 +43,8 @@ body {
 
 #header {
   margin: 0 20px;
-  padding: 20px;
+  padding: 20px 0 5px 0;
   background: #fff;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 .title {
@@ -58,16 +57,32 @@ body {
   text-shadow: 0 2px 6px rgba(0,0,0,.5);
 }
 
-#header ul {
+.live-toggle-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  margin: 0 20px;
+  padding: 5px 0;
+  background: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.live-toggle-bar ul {
   list-style: none;
   padding: 0;
   text-align: center;
   margin: 10px 0;
 }
 
-#header li {
+.live-toggle-bar li {
   display: inline;
-  margin: 0 20px;
+  padding: 0 auto;
+  margin: 0 20px 0 0;
+}
+
+.shadow {
+  box-shadow: 0 6px 6px rgba(0,0,0,.2);
 }
 
 button {
@@ -199,14 +214,23 @@ footer {
 
 @media(max-width:500px) {
   body {
-    font-size: .9em;
+    font-size: .9rem;
   }
   #header {
     margin: 0;
     border-radius: 0;
+    padding: 15px 0 0 0;
   }
   .title {
     font-size: 46px;
+  }
+  .live-toggle-bar {
+    margin: 0;
+    padding: 1px 0;
+    border-radius: 0;
+  }
+  button {
+    padding: 10px;
   }
   .streamer-entry {
     height: 80px;
