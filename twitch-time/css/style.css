@@ -34,7 +34,7 @@ body {
 }
 
 #container {
-  max-width: 1000px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 0;
   height: 100%;
@@ -54,7 +54,7 @@ body {
   font-family: 'Fredoka One', sans serif;
   font-size: 60px;
   text-align: center;
-  text-shadow: 1px 1px rgba(255,255,255,.5), 2px 2px #503483, 4px 4px #402968, 6px 6px #332053
+  text-shadow: 0 2px 6px rgba(0,0,0,.5);
 }
 
 #header ul {
@@ -192,8 +192,8 @@ footer {
   margin: 12px 20px 0 20px;
   padding: 8px;
   background: #fff;
-  border-radius: 8px;
   border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   text-align: center;
 }
 
